@@ -1,4 +1,19 @@
+<!-- Back to home, edit, and delete links -->
+
+<%= link_to "Back to Images", images_url %> | <span class="label label-warning"><%= link_to "Edit", edit_image_path(@image) %></span> | <span class="label label-danger"><%= link_to "Delete", @image, method: :delete, data: {confirm: "Are you sure?"} %></span>
+
+<!-- ############### -->
+
+
 <h1><%= @image.title %></h1>
 <h3><%= @image.artist %></h3>
 
-<img src="<%= @image.url %>">
+
+
+<div class="row">
+  <div class="col-xs-9 col-md-9">
+     <div class="thumbnail">
+        <%= image_tag @image.url  %>
+    </div>
+  </div>
+</div>

@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Photogur2</title>
+  <title>Photogur</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<!-- Header/Nav -->
+<br>
+<div class="container">
+
+  <div class="jumbotron">
+    <h1>Photogur</h1>
+      <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default"><a href="/images/">Home</button>
+        <button type="button" class="btn btn-default"><a href="/images/new">Add an Image</button>
+      </div>
+  </div>
+
+</div>
+
+<!-- Content -->
+  <div class="container">
+    <div class="container">
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <%= yield %>
+        </div>
+
+      <div class="text-center">
+        <div class="panel-footer"><h5>Photogur 2015</h5></div>
+      </div>
+
+    </div>
+  </div>
+
 
 </body>
 </html>

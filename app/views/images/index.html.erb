@@ -1,10 +1,33 @@
-<h1>PhotoFeed</h1>
-
-<% @images.each do |image| %>
-
-  <p><%= image.title %> | <%= image.artist %></p>
-  <img src="<%= image.url %>">
-
-<% end %>
+<h1>PhotoFeed (<%= @images.length %>)</h1>
+<%= link_to 'Add an Image', '/images/new' %>
 
 
+<div class="containter">
+<div class="row">
+  <div class="col-xs-12 col-md-12">
+     <div class="thumbnail">
+     <hr>
+      <% @images.each do |image| %>
+        <h5><%= image.title %> | <%= image.artist %></h5>
+        <%= link_to image_tag(image.url), "/images/#{image.id}" %>
+        <hr>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!--
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+ -->
